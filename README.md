@@ -1,16 +1,96 @@
-# React + Vite
+# Photo Gallery App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and responsive Photo Gallery web application built using React, Vite, and Tailwind CSS.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Fetches 30 photos from the Picsum Photos API
+- Displays photos in a responsive grid layout
+- Search photos by author name in real-time
+- Mark and unmark photos as favourites
+- Favourites persist after page refresh using localStorage
+- Loading and error handling states
+- Custom Hook for fetching data
+- useReducer for managing favourites state
+- useCallback for search handler optimization
+- useMemo for filtered photo list optimization
 
-## React Compiler
+## Technologies Used
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- Vite
+- Tailwind CSS
+- JavaScript
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Clone the repository
+
+```bash
+git clone <repository-link>
+```
+
+### Navigate to the project directory
+
+```bash
+cd photo-gallery
+```
+
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Start the development server
+
+```bash
+npm run dev
+```
+
+## API Used
+
+Picsum Photos API
+
+```text
+https://picsum.photos/v2/list?limit=30
+```
+
+## Project Structure
+
+```text
+src/
+│
+├── components/
+│   ├── Gallery.jsx
+│   └── PhotoCard.jsx
+│
+├── hooks/
+│   └── useFetchPhotos.js
+│
+├── reducers/
+│   └── favouritesReducer.js
+│
+├── App.jsx
+├── main.jsx
+└── index.css
+```
+
+## Functionality
+
+### Photo Fetching
+Photos are fetched from the Picsum Photos API using a custom hook called `useFetchPhotos`.
+
+### Search
+Users can search photos by author name. The filtering happens instantly without making additional API requests.
+
+### Favourites
+Users can mark photos as favourites using the heart button. Favourite photos are stored in localStorage and remain saved even after refreshing the page.
+
+### Performance Optimization
+- `useCallback` is used for the search input handler.
+- `useMemo` is used to optimize filtering of photos.
+
+## Author
+
+Nakul Singh Sisodia
