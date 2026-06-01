@@ -27,7 +27,7 @@ A simple and responsive Photo Gallery web application built using React, Vite, a
 ### Clone the repository
 
 ```bash
-git clone <repository-link>
+git clone https://github.com/nakulsinghsisodia/photo-gallery
 ```
 
 ### Navigate to the project directory
